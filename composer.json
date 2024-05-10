@@ -64,5 +64,7 @@
         }
     },
     "minimum-stability": "stable",
-    "prefer-stable": true
+    "prefer-stable": true,
+
+    "hiddeco/laravel-giphy": "0.1.*@alpha"
 }

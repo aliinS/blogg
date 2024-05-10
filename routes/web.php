@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ChirpController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -32,5 +33,8 @@ Route::middleware('auth')->group(function () {
 Route::resource('chirps', ChirpController::class)
     ->only(['index', 'store', 'edit', 'update', 'destroy'])
     ->middleware(['auth', 'verified']);
+
+Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
+Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])->name('comments.destroy');;
 
 require __DIR__.'/auth.php';
